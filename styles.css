@@ -50,7 +50,6 @@ header {
 	transition: 1.7s;
 	font-size: calc(2vw + 2vh);
 	font-weight: bold;
-	/* border: 1px solid rgb(50, 50, 50); */
 	animation: appear 2s;
 	visibility: visible;
 	opacity: 100%;
