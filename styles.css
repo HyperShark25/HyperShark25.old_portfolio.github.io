@@ -1,78 +1,109 @@
-@media only screen and (max-width: 720px) {
-	body {
-		width: 98vw;
-		height: 98vh;
+/* Header Element */
+@keyframes disappear {
+	0% {
+ 		opacity: 100%;
+		visibility: visible;
+		transform: scale(1);
 	}
-	.bio * {
-		height: auto;
-		margin-bottom: 10vh;
-		margin-top: 2vh;
-	}
-	.info {
-		height: 9vh;
-		margin-top: -7vh;
-	}
-	.list * {
-		width: 100vw;
-		height: 10vh;
-		margin-bottom: 0;
-		margin-top: -1vh;
-	}
-	.table {
-		margin-left: 5vw;
-	}
-	.intern {
-		margin-top: -15vh;
-	}
-	.intern img {
-		width: 97vw;
+	100% {
+ 		opacity: 0%;
+		visibility: hidden;
+		transform: scale(0);
 	}
 }
+
+@keyframes appear {
+	0% {
+ 		opacity: 0%;
+		visibility: hidden;
+		transform: scale(0);
+	}
+	100% {
+ 		opacity: 100%;
+		visibility: visible;
+		transform: scale(1);
+	}
+}
+
 body {
 	background-color: rgb(50, 50, 50);
-	width: 98vw;
+	overflow: hidden;
 }
+.about,
+.skills,
+.projects,
+.freeCodeCamp,
+.resume {
+	animation: diappear 1s;
+	position: absolute;
+	visibility: hidden;
+	opacity: 0;
+}
+
 header {
-	width: 97.5vw;
+	width: 98.7vw;
+	height: auto;
 	text-align: center;
 	background-color: rgba(250, 100, 0, 60%);
-	border-radius: 36px;
+	border-radius: calc(4vw + 4vh);
 	color: transparent;
 	transition: 1.7s;
-	font-size: 25px;
+	font-size: calc(2vw + 2vh);
 	font-weight: bold;
-	border: 1px solid rgb(50, 50, 50);
+	/* border: 1px solid rgb(50, 50, 50); */
+	animation: appear 2s;
+	visibility: visible;
+	opacity: 100%;
+	position: absolute;
 }
 
 header:hover {
 	color: white;
-	text-shadow: 3px 3px 4px black;
+	text-shadow: 3px 3px 8px black;
+}
+.scl {
+	position: fixed;
+	bottom: 80%;
+	width: 6vw;
+	height: 12vh;
+	border: 2px solid black;
+	border-radius: 38px;
+	color: white;
+	background-color: transparent;
+	font-size: calc(2.4vw + 2.4vh);
+	cursor: pointer;
+	transition: 1s;
+	z-index: 1;
+	opacity: 40%;
+}
+.scl:hover {
+	/* transform: translate(0, 10px); */
+	transform: rotate(720deg) scale(1.5);
+	background-color: black;
+	opacity: 100%;
+}
+.next_pge {
+	right: 5%;
+}
+.last_pge {
+	left: 5%;
 }
 h1 {
 	font-style: italic;
 	font-weight: bold;
-	text-shadow: 3px 3px 5px blue;
 	font-family: Verdana;
 	color: blue;
-	font-size: 70px;
-}
-hr {
-	border: 15px solid transparent;
-	width: 95vw;
+	font-size: calc(5.5vw + 5.5vh);
+	margin-top: 1.5vh;
 }
 
-.table td {
-	padding: 10px;
-	padding-left: 5vw;
-}
 
-.include {
-	color: black;
-	font-size: 22px;
-	font-weight: bold;
-}
-.table {
-	margin-left: 5vw;
+/* about Element */
+
+h2 {
+	text-align: center;
+	font-size: calc(2.5vw + 2.5vh);
+	color: white;
 }
 .bio {
 	display: flex;
@@ -80,61 +111,70 @@ hr {
 }
 
 .info {
-	width: 58vw;
-	padding-top: 7vh;
-	padding-left: 10vw;
-	font-size: calc(1.1vw + 1.1vh);
+	width: 50vw;
+	padding-left: 5vw;
+	font-size: calc(1.5vw + 1.5vh);
 	color: rgb(250, 250, 255);
 	font-style: italic;
 	font-weight: bold;
 	text-shadow: 3px 3px 5px black;
 }
 .profile {
-	max-width: 100%;
-	width: 16vw;
-	height: auto;
-	margin-right: 7vw;
+	width: 18vw;
+	height: 36vh;
+	margin-left: 12vw;
 	border-radius: calc(8vw + 8vh);
 }
-h2 {
-	text-align: center;
-	font-size: 36px;
-	color: white;
-}
-.table td {
-	font-size: 23px;
-	font-style: italic;
-}
-.table {
-	transition: 1.5s;
-	color: transparent;
-}
-.table:hover {
-	color: rgb(0, 150, 250);
-}
+
+/* skills and projects elements */
+
 .skills {
 	background-color: rgb(200, 0, 0);
 	border-radius: 20px;
-	padding: 20px;
+	width: 98.8vw;
+	height: 98vh;
+}
+
+.include {
+	color: black;
+	font-size: calc(2vw + 2vh);
+	font-weight: bold;
+	position: absolute;
+	left: 40%;
+	top: 7%;
+}
+.table {
+	margin-left: 4vw;
+	transition: 1.5s;
+	color: transparent;
+	margin-top: 24vh;
+}
+
+.table:hover {
+	color: rgb(0, 150, 250);
 }
 
 .table td {
+	padding: calc(1vw + 1vh);
+	font-size: calc(2vw + 2vh);
+	font-style: italic;
 	text-shadow: 4px 5px 8px black;
 	font-weight: bold;
 }
-.skills p {
-	text-align: center;
-}
+
 .row td * {
 	width: 70%;
 }
 .row *{
 	margin-bottom: 15vh;
 }
+
+/* projects element */
+
 .item {
 	height: 35vh;
 	border-radius: 15px;
-	margin-top: 5vh;
+	margin-top: 10vh;
 }
 .link {
 	display: inline-block;
@@ -152,7 +192,6 @@ h2 {
 	color: rgb(200, 250, 0);
 	font-family: Verdana;
 	font-size: 38px;
-	margin: 5px;
 	font-weight: bold;
 	text-shadow: 2px 3px 5px black;
 }
@@ -166,16 +205,19 @@ h2 {
 	color: white;
 	font-size: 20px;
 }
-.courses {
+
+
+.freeCodeCamp {
 	text-align: center;
-	font-size: 25px;
+	font-size: calc(2vw + 2vh);
 }
-.courses div {
-	padding-top: 10px;
-	padding-bottom: 10px;
+.freeCodeCamp div {
+	padding-top: 3vh;
+	padding-bottom: 3vh;
 	border: 3px solid black;
-	border-radius: 28px;
+	border-radius: calc(2vw + 2vh);
 	background-color: rgb(170, 0, 0);
+	width: 97vw;
 }
 .freecodecamp {
 	text-decoration: none;
@@ -186,18 +228,20 @@ h2 {
 	font-style: italic;
 	transition: 1s;
 }
-.courses div {
+.freeCodeCamp div {
 	transition: 1s;
 }
 
-.courses div:hover {
+.freeCodeCamp div:hover {
 	background-color: rgb(0, 100, 250);
 	color: black;
 }
-.courses a:hover {
+.freeCodeCamp a:hover {
 	background-color: transparent;
 	color: black;
 }
+
+/* resume element */
 
 .resume {
 	margin-top: 3vh;
@@ -211,10 +255,7 @@ h2 {
 	color: rgb(0, 150, 250);
 	font-size: 22px;
 }
-.contact, footer {
-	color: white;
-	text-shadow: 2px 2px 3px black;
-}
+/* contact element */
 .contact * {
 	font-size: 22px;
 }
@@ -222,6 +263,15 @@ h2 {
 	color: rgb(0, 100, 220);
 	font-size: 20px;
 }
+
+/* footer and contact element */
+
+.contact, footer {
+	color: white;
+	text-shadow: 2px 2px 3px black;
+}
+
+/* footer element */
 .contacts {
 	color: white;
 	font-size: 28px;
@@ -231,4 +281,20 @@ h2 {
 	text-decoration: none;
 	color: rgb(0, 100, 250);
 	font-size: 22px;
+}
+
+.icon {
+	border: 1px solid white;
+}
+
+footer {
+	width: 101vw;
+	margin-top: 45vh;
+	margin-left: -1vw;
+	border: 1px solid white;
+	background-color: black;
+}
+
+.copyright {
+	padding-left: 2vw;
 }
